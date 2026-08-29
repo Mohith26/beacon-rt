@@ -1,0 +1,238 @@
+{
+  "generatedAt": "2026-08-29T03:05:06.085Z",
+  "tests": {
+    "total": 27,
+    "asserts": 34448,
+    "failures": []
+  },
+  "perSuite": [
+    {
+      "suite": "crc",
+      "tests": 4,
+      "asserts": 304
+    },
+    {
+      "suite": "framing",
+      "tests": 6,
+      "asserts": 5953
+    },
+    {
+      "suite": "packets",
+      "tests": 5,
+      "asserts": 28055
+    },
+    {
+      "suite": "scheduler",
+      "tests": 7,
+      "asserts": 16
+    },
+    {
+      "suite": "radio",
+      "tests": 5,
+      "asserts": 120
+    }
+  ],
+  "evidence": {
+    "singleBitFlips": {
+      "checked": 512,
+      "missed": 0
+    },
+    "doubleBitFlips": {
+      "checked": 18336,
+      "missed": 0
+    },
+    "resync": {
+      "framesSent": 60,
+      "dropouts": 2,
+      "framesRecovered": 57
+    },
+    "bitErrors": {
+      "frames": 400,
+      "bitsFlipped": 52,
+      "rejected": 51,
+      "delivered": 349,
+      "undetected": 0
+    },
+    "reassembly": {
+      "packets": 60,
+      "frames": 274,
+      "bytes": 26490,
+      "recovered": 60,
+      "dropped": 0
+    },
+    "rta": {
+      "tasks": [
+        {
+          "name": "rx_isr",
+          "period": 10,
+          "wcet": 2,
+          "deadline": 10,
+          "worstCaseResponse": 2,
+          "schedulable": true
+        },
+        {
+          "name": "framer",
+          "period": 25,
+          "wcet": 4,
+          "deadline": 25,
+          "worstCaseResponse": 6,
+          "schedulable": true
+        },
+        {
+          "name": "telemetry",
+          "period": 50,
+          "wcet": 8,
+          "deadline": 50,
+          "worstCaseResponse": 16,
+          "schedulable": true
+        },
+        {
+          "name": "housekeep",
+          "period": 200,
+          "wcet": 20,
+          "deadline": 200,
+          "worstCaseResponse": 46,
+          "schedulable": true
+        }
+      ],
+      "utilisation": 0.62,
+      "utilisationBound": 0.756828,
+      "passesUtilisationBound": true,
+      "schedulable": true
+    },
+    "simulation": [
+      {
+        "name": "rx_isr",
+        "predicted": 2,
+        "measured": 2,
+        "jitter": 0,
+        "misses": 0
+      },
+      {
+        "name": "framer",
+        "predicted": 6,
+        "measured": 6,
+        "jitter": 2,
+        "misses": 0
+      },
+      {
+        "name": "telemetry",
+        "predicted": 16,
+        "measured": 16,
+        "jitter": 0,
+        "misses": 0
+      },
+      {
+        "name": "housekeep",
+        "predicted": 46,
+        "measured": 46,
+        "jitter": 0,
+        "misses": 0
+      }
+    ],
+    "simulationSummary": {
+      "ticks": 4000,
+      "contextSwitches": 500,
+      "utilisation": 0.62
+    },
+    "longRun": {
+      "ticks": 20000,
+      "jobs": 3300,
+      "misses": 0
+    },
+    "overload": {
+      "utilisation": 1.17,
+      "misses": 79
+    },
+    "priorityInversion": {
+      "blockedTicksWithoutInheritance": 33,
+      "blockedTicksWithInheritance": 3,
+      "reduction": 0.9091
+    },
+    "backpressure": {
+      "frames": 20,
+      "backpressureEvents": 577,
+      "fifoDepth": 132
+    },
+    "airRoundTrip": {
+      "frames": 50,
+      "bytes": 6100,
+      "registerReads": 178,
+      "registerWrites": 6198
+    }
+  },
+  "bench": {
+    "frameBytes": 122,
+    "dataFieldBytes": 110,
+    "framing": {
+      "frames": 20000,
+      "encode_ms": 18.1,
+      "decode_ms": 7.26,
+      "encodeFramesPerSec": 1104731,
+      "decodeFramesPerSec": 2754378,
+      "decodeMbitPerSec": 2688.27,
+      "decodedOk": 20000
+    },
+    "errorDetection": {
+      "corruptedFrames": 10244,
+      "bitsFlipped": 11874,
+      "rejected": 10244,
+      "acceptedAfterCorruption": 0,
+      "undetectedCorruptions": 0
+    },
+    "packetStack": {
+      "packets": 4000,
+      "frames": 16950,
+      "recovered": 4000,
+      "dropped": 0,
+      "ms": 18.79,
+      "packetsPerSec": 212854
+    },
+    "scheduler": {
+      "ticks": 200000,
+      "ms": 6.67,
+      "ticksPerSec": 30006750,
+      "contextSwitches": 25000,
+      "utilisation": 0.62,
+      "tasks": [
+        {
+          "name": "rx_isr",
+          "predicted": 2,
+          "measured": 2,
+          "jitter": 0,
+          "misses": 0
+        },
+        {
+          "name": "framer",
+          "predicted": 6,
+          "measured": 6,
+          "jitter": 2,
+          "misses": 0
+        },
+        {
+          "name": "telemetry",
+          "predicted": 16,
+          "measured": 16,
+          "jitter": 0,
+          "misses": 0
+        },
+        {
+          "name": "housekeep",
+          "predicted": 46,
+          "measured": 46,
+          "jitter": 0,
+          "misses": 0
+        }
+      ]
+    },
+    "driver": {
+      "frames": 4000,
+      "ticks": 3813,
+      "ms": 14.25,
+      "framesPerSec": 280664,
+      "backpressureEvents": 3797,
+      "registerAccesses": 503425,
+      "bytesOnAir": 488000
+    }
+  }
+}
