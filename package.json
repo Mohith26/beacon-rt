@@ -1,0 +1,12 @@
+{
+  "name": "beaconrt",
+  "version": "1.0.0",
+  "description": "Fixed priority scheduler and CCSDS style telemetry downlink, simulated end to end",
+  "main": "src/framing.js",
+  "scripts": {
+    "test": "node test/run-all.js",
+    "bench": "node bench/bench.js"
+  },
+  "license": "MIT",
+  "private": false
+}
